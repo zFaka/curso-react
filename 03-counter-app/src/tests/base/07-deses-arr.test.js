@@ -2,10 +2,11 @@ import {retornaArreglo} from '../../base/07-deses-arr';
 
 describe('Destructuring array test', () => {
     test('Output object', () => {
-        const xpctArr = ['ABC', 123];
-            const rtrnArr = retornaArreglo();
-        expect(rtrnArr)
-            .toEqual(['ABC', 123])
+        const [letras, numeros] = retornaArreglo();
+        expect(letras).toBe('ABC');
+        expect(typeof letras).toBe('string');;
+        expect(numeros).toBe(123);
+        expect(typeof numeros).toBe('number');;
     })
 })
 //const personajes = ['Goku','Vegeta','Trunks'];

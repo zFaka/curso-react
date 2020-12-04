@@ -20,8 +20,8 @@ const CounterApp = ( {value} ) => {
 
     return (
         <>
-            <h1>CounterApp</h1>
-            <h2>{counter}</h2>
+            <h2>CounterApp</h2>
+            <h1>{counter}</h1>
             <h3>
                 <button onClick={handlerClickDown}>-</button>
                 <button onClick={handlerClickRst}>R</button>
