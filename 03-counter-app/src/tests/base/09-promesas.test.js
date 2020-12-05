@@ -17,4 +17,18 @@ describe('Test with promises', () => {
 
     });
 
+    test('Should return error message', (done) => {
+
+        const id = 10;
+
+        getHeroeByIdAsync(id)
+            .catch( e => {
+
+                expect(e).toBe('No se pudo encontrar el héroe');
+                done();
+
+            });
+
+    });
+
 });
