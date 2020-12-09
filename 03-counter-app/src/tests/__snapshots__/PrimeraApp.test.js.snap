@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrimeraApp test Should show <PrimeraApp/> correctly 1`] = `
+<Fragment>
+  <h1>
+    Faketah
+  </h1>
+  <p>
+    First App
+  </p>
+</Fragment>
+`;

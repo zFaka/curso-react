@@ -4,7 +4,6 @@ describe('Async-await test', () => {
 
     test('Should return url of image', async() => {
 
-        // eslint-disable-next-line no-undef
         const url = await getImagen();
 
         //expect(typeof url).toBe('string');

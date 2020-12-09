@@ -10,12 +10,14 @@ export const AddCategory = ({setCategories}) => {
   };
 
   const handleSubmmit = (submmitedValue) => {
+
     submmitedValue.preventDefault();
 
     if (textareaValue.trim().length > 1) {
-      setCategories(oldTextareaValue=>[...oldTextareaValue, textareaValue]);
+      setCategories(oldTextareaValue=>[textareaValue, ...oldTextareaValue]);
       setTextareaValue('');
     }
+
   };
 
   return (
@@ -29,6 +31,4 @@ export const AddCategory = ({setCategories}) => {
     </form>
   )}
 
-AddCategory.propTypes = {   
-  setCategories: PropTypes.func.isRequired
-}
+AddCategory.propTypes = {setCategories: PropTypes.func.isRequired}

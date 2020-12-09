@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
-const CounterApp = ( {value} ) => {
+const CounterApp = ( {value = 0 } ) => {
 
     const [counter, setCounter] = useState(value);
 
@@ -20,8 +20,8 @@ const CounterApp = ( {value} ) => {
 
     return (
         <>
-            <h2>CounterApp</h2>
-            <h1>{counter}</h1>
+            <h1>CounterApp</h1>
+            <h2>{counter}</h2>
             <h3>
                 <button onClick={handlerClickDown}>-</button>
                 <button onClick={handlerClickRst}>R</button>
