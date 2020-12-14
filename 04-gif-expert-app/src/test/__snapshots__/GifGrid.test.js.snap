@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing GifGrid Should render component 1`] = `
+<Fragment>
+  <h3
+    className="animate__animated animate__fadeInDown"
+  >
+    Minecraft
+  </h3>
+  <p
+    className="animate__animated animate__flash"
+  >
+    L   o  a ding
+  </p>
+  <div
+    className="card-grid"
+  />
+</Fragment>
+`;
+
+exports[`Testing GifGrid Should show items when images are load using useFetchGifs 1`] = `
+<Fragment>
+  <h3
+    className="animate__animated animate__fadeInDown"
+  >
+    Minecraft
+  </h3>
+  <div
+    className="card-grid"
+  >
+    <GifGridItem
+      id="1"
+      key="1"
+      title="whaterevah"
+      url="https://minecraft.net"
+    />
+  </div>
+</Fragment>
+`;

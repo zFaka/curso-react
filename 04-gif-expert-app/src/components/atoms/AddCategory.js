@@ -22,6 +22,7 @@ export const AddCategory = ({setCategories}) => {
 
   return (
     <form onSubmit={handleSubmmit}>
+      {/*<p>{textareaValue}</p>*/}
       <input 
         type='text' 
         placeholder='Any idea?'
