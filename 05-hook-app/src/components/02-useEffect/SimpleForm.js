@@ -4,12 +4,10 @@ import Message from './Message';
 
 const SimpleForm = () => {
 
-
   const [formState, setFormState] = useState({
 
     name: '', 
     email: ''
-
   });
 
 
@@ -18,25 +16,19 @@ const SimpleForm = () => {
 
   // los [] se ponen cuando solo queres que se ejecute una vez
   useEffect(() => {
-
     //console.log('hey jude');
-
   }, []);
 
 
   // va a volver a ejecutarse cuando el formState se modifique
   useEffect(() => {
-
     //console.log('hey formState');
-
   }, [formState]);
 
 
   // se ejecuta cada vez que cambie el estadp del email
   useEffect(() => {
-
     //console.log('hey email');
-
   }, [email]);
 
 

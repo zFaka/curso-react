@@ -1,31 +1,40 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
 const Message = () => {
+
+  const [coord, setCoord] = useState({x:0, y:0});
+  const {x, y} = coord;
 
 
   useEffect(() => {
 
     console.log('mounted component')
 
-    window.addEventListener('mousemove', (event) => {
+    const mouseMove = (e) => {
 
-      console.log(event);
+      const coords = {x:e.x, y:e.y};
+      setCoord(coords);
+    };
 
-      const coord = {x:event.x, y:event.y};
-
-    })
+    window.addEventListener('mousemove', mouseMove);
 
     return () => {
 
-      console.log('unmounted component')
+      window.removeEventListener('mousemove', mouseMove);
 
+      console.log('unmounted component')
     }}, [])
+
 
 
   return (
     <>
       <h3>Un Capo</h3> 
+      <p>
+        x:{x} y:{y}
+      </p>
     </>
-  )}
+  )
+}
 
 export default Message;
