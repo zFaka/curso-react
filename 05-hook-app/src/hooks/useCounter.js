@@ -3,26 +3,26 @@ import {useState} from 'react';
 const useCounter = (initalState = 0) => {
 
 
-  const [state, setState] = useState(initalState);
+  const [counter, setCounter] = useState(initalState);
 
 
-  const increase = (factor = 1) => {
+  const increase = () => {
 
-    setState(state + factor);
+    setCounter(counter + 1);
 
   }
 
 
-  const decrease = (factor = 1) => {
+  const decrease = () => {
 
-    setState(state - factor);
+    setCounter(counter - 1);
 
   }
 
 
   const reset = () => {
 
-    setState(initalState);
+    setCounter(initalState);
 
   };
 
@@ -30,7 +30,7 @@ const useCounter = (initalState = 0) => {
 
   return {
 
-    state, 
+    counter, 
     increase, 
     decrease, 
     reset
