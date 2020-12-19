@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './components/01-useState/counterApp.css';
-import MemoHook from './components/06-memos/MemoHook';
+import {Padre} from './components/07-tarea-memo/Padre';
+//import CallbackHook from './components/06-memos/CallbackHook';
+//import MemoHook from './components/06-memos/MemoHook';
 //import Memorize from './components/06-memos/Memorize';
 //import {Layout} from './components/05-useLayoutEffect/Layout';
 //import RealExample from './components/04-useRef/RealExample';
@@ -24,6 +26,8 @@ ReactDOM.render(
   //<RealExample/>, 
   //<Layout/>, 
   //<Memorize/>, 
-  <MemoHook/>, 
+  //<MemoHook/>, 
+  //<CallbackHook/>, 
+  <Padre/>, 
   document.getElementById('root')
 );

@@ -16,22 +16,22 @@ export const MultipleCustomHooks = () => {
         loading 
           ?
 
-          <div className='alert alert-info text-center'>
-            Lo a d  i   n    g
-          </div>
+            <div className='alert alert-info text-center'>
+              Lo a d  i   n    g
+            </div>
 
-          :
+            :
 
-          <>
-          <blockquote className='blockquote text-right'>
-            <p className='mb-3'>{quote}</p>
-            <footer className='blockquote-footer'>{author}</footer>
-          </blockquote>
+            <>
+              <blockquote className='blockquote text-right'>
+                <p className='mb-3'>{quote}</p>
+                <footer className='blockquote-footer'>{author}</footer>
+              </blockquote>
 
-          <button className='btn btn-primary' onClick={increase}>
-            Nxt Quote
-          </button>
-          </>
+              <button className='btn btn-primary' onClick={increase}>
+                Nxt Quote
+              </button>
+            </>
       }
     </>
   )
