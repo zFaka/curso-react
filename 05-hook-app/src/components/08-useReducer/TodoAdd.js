@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
+import './styles.css' ;
 import useForm from '../../hooks/useForm';
 
 const TodoAdd = ({handleAddTodo}) => {
 
 
+
+  const [show, setShow] = useState(false);
+
+  
   const [{description}, handleInputChange, reset] = useForm({
 
     description:''
@@ -14,7 +19,7 @@ const TodoAdd = ({handleAddTodo}) => {
   const handleSubmit = (e) => {
 
     //Esto evita que recargue la pagina una vez hecho el submit
-    
+
     e.preventDefault();
 
     if(description.trim().length <= 1){return}
@@ -34,25 +39,28 @@ const TodoAdd = ({handleAddTodo}) => {
 
 
   return (
-      <>
-          <form onSubmit={handleSubmit}>
-            <input 
-              type='text'
-              name= 'description'
-              className='form-control rounded'
-              autoComplete='off'
-              value={description}
-              onChange={handleInputChange}
-            />
-
+    <>
+      <form onSubmit={handleSubmit}>
+        <input 
+          type='text'
+          name= 'description'
+          className='form-control rounded'
+          autoComplete='off'
+          value={description}
+          onChange={handleInputChange}
+        />
+        {
+         show 
+          && 
             <button 
               className='btn btn-primary'
               type='submit'
             >
               + 
             </button>
-          </form>
-      </>
+        }
+      </form>
+    </>
   )}
 
 export default TodoAdd;

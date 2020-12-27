@@ -16,7 +16,7 @@ const TodoApp = () => {
 
 
   // Should jsonite the objecto to can storage
-  
+
   useEffect(() => {
 
     localStorage.setItem('todos', JSON.stringify(todos))
@@ -66,11 +66,11 @@ const TodoApp = () => {
     <>
       <h1>TodoApp</h1> 
 
-      <h4>Remaining Tasks: {todos.length} </h4>
+      <h4>Tasks: {todos.length} </h4>
 
       <div className='row'>
 
-        <div className='col-7'>
+        <div className=''>
           <TodoList
             todos={todos}
             handleDelete={handleDelete}
@@ -78,7 +78,7 @@ const TodoApp = () => {
           />
         </div>
 
-        <div className='col-5'>
+        <div className=''>
 
           <TodoAdd
             handleAddTodo={handleAddTodo}

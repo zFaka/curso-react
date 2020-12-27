@@ -1,9 +1,3 @@
-body {
-
-        padding: 77px;
-
-}
-
 p{
 
         cursor: pointer;
@@ -26,7 +20,11 @@ p{
 }
 
 form {
-
         display:flex;
+        position:fixed;
+        bottom: 0px;
+        left:0;
+        width: 100%;
+        margin: auto;
 
 }
