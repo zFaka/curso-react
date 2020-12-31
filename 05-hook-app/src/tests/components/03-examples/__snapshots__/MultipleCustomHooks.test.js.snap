@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test MultipleCustomHooks Should show component correctly 1`] = `
+<Fragment>
+  <h1>
+    Breaking Bad Quotes
+  </h1>
+  <div
+    className="alert alert-info text-center"
+  >
+    Lo a d  i   n    g
+  </div>
+</Fragment>
+`;

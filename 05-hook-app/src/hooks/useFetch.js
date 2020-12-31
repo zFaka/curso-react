@@ -30,6 +30,15 @@ export const useFetch = (url) => {
           })
         } 
       })
+      .catch(()=>{
+
+        setState({
+
+          data:null, 
+          loading:false, 
+          error:'info doesnt load'
+        })
+      })
 
   }, [url])
 
