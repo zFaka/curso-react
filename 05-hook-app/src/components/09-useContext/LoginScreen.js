@@ -8,7 +8,7 @@ const LoginScreen = () => {
   const inputedData = {
 
       id:123, 
-    nick:'chucko'
+    name:'chucko'
   };
 
 

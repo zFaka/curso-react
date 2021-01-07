@@ -34,14 +34,14 @@ describe('Testing useFetch', () => {
 
 
 
-  //test('Should use errorHandler', async() => {
+  test('Should use errorHandler', async() => {
 
-    //const {result, waitForNextUpdate} = renderHook(()=>useFetch(`https://regres.in/apid/users?page=2`))
-    //await waitForNextUpdate();
-    //const {data, loading, error} = result.current;
+    const {result, waitForNextUpdate} = renderHook(()=>useFetch(`https://reqres.in/apid/users?page=2`))
+    await waitForNextUpdate();
+    const {data, loading, error} = result.current;
 
-    //expect(data).toEqual(null);
-    //expect(loading).toBe(false);
-    //expect(error).toBe('info doesnt load');
-  //})
+    expect(data).toEqual(null);
+    expect(loading).toBe(false);
+    expect(error).toBe('info doesnt load');
+  })
 })

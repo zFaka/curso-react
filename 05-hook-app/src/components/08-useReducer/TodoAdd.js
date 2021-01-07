@@ -8,7 +8,7 @@ const TodoAdd = ({handleAddTodo}) => {
 
   const [show, setShow] = useState(false);
 
-  
+
   const [{description}, handleInputChange, reset] = useForm({
 
     description:''
@@ -50,14 +50,14 @@ const TodoAdd = ({handleAddTodo}) => {
           onChange={handleInputChange}
         />
         {
-         show 
-          && 
-            <button 
-              className='btn btn-primary'
-              type='submit'
-            >
-              + 
-            </button>
+          show 
+            && 
+              <button 
+                className='btn btn-primary'
+                type='submit'
+              >
+                + 
+              </button>
         }
       </form>
     </>

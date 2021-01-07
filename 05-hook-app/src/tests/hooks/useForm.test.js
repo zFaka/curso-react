@@ -6,7 +6,7 @@ describe('Testing useForm', () => {
   const initialForm = {
 
     name:'fercha', 
-    email:'fer@mail.com'
+    email:'faka@gmail.com'
   };
 
 
@@ -66,6 +66,7 @@ describe('Testing useForm', () => {
 
     const valueAfterReset = result.current[0];
 
-    expect(valueAfterReset).toEqual(initialForm);
+    expect(valueAfterReset)
+      .toEqual(initialForm);
   })
 })

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test TodoList Should render 1`] = `
+<Fragment>
+  <ul
+    className="list-group list-group-flush"
+  >
+    <TodoListItem
+      handleDelete={[MockFunction]}
+      handleToggle={[MockFunction]}
+      index={0}
+      key="1"
+      todo={
+        Object {
+          "desc": "lrn rct",
+          "done": false,
+          "id": 1,
+        }
+      }
+    />
+    <TodoListItem
+      handleDelete={[MockFunction]}
+      handleToggle={[MockFunction]}
+      index={1}
+      key="2"
+      todo={
+        Object {
+          "desc": "lrn mng",
+          "done": false,
+          "id": 2,
+        }
+      }
+    />
+  </ul>
+</Fragment>
+`;

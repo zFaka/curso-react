@@ -8,10 +8,17 @@ describe('Test hook', () => {
     const {result} = renderHook(()=>useCounter());
 
 
-    expect(result.current.counter).toBe(0);
-    expect(typeof result.current.increase ).toBe('function');
-    expect(typeof result.current.decrease ).toBe('function');
-    expect(typeof result.current.reset ).toBe('function');
+    expect(result.current.counter)
+      .toBe(0);
+
+    expect(typeof result.current.increase )
+      .toBe('function');
+
+    expect(typeof result.current.decrease )
+      .toBe('function');
+
+    expect(typeof result.current.reset )
+      .toBe('function');
   })
 
 

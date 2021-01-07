@@ -9,16 +9,19 @@ jest.mock("../../../hooks/useCounter")
 describe('Test MultipleCustomHooks', () => {
 
 
-
   test('Should show component correctly', () => {
 
+    useCounter.mockReturnValue({
 
-  useCounter.mockReturnValue({
+      counter:0, 
+      increase:()=>{}
+    });
 
-    counter:0, 
-    increase:()=>{}
-  });
-    useFetch.mockReturnValue({data:null,loading:true,error:null});
+    useFetch.mockReturnValue({
+      data:null,
+      loading:true,
+      error:null
+    });
 
     const wrapper = shallow(<MultipleCustomHooks/>);
     expect(wrapper).toMatchSnapshot();
@@ -29,7 +32,12 @@ describe('Test MultipleCustomHooks', () => {
   test('Should show info', () => {
 
 
-  useCounter.mockReturnValue({counter:0, increase:()=>{}});
+    useCounter.mockReturnValue({
+
+      counter:0, 
+      increase:()=>{}
+    });
+
     useFetch.mockReturnValue({
 
       data:[{
@@ -42,6 +50,7 @@ describe('Test MultipleCustomHooks', () => {
     })
 
     const wrapper = shallow(<MultipleCustomHooks/>);
+
 
     expect(wrapper.find('.alert').exists())
       .toBe(false);
