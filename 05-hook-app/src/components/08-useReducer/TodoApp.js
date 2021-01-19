@@ -6,7 +6,8 @@ import TodoAdd from './TodoAdd';
 
 const init = () => {
 
-  return JSON.parse(localStorage.getItem('todos')) || [];
+  return JSON.parse(localStorage.getItem('todos'))
+    || [];
 };
 
 const TodoApp = () => {

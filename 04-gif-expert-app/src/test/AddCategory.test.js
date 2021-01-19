@@ -19,11 +19,11 @@ describe('Testing AddCategory', () => {
 
   //test('Should change textarea', () => {
 
-    //const input = wrapper.find('input');
-    //const value = 'loquesea';
-    //input.simulate('change', {target: {value:value}});
+  //const input = wrapper.find('input');
+  //const value = 'loquesea';
+  //input.simulate('change', {target: {value:value}});
 
-    //expect(wrapper.find('p').text().trim()).toBe(value)
+  //expect(wrapper.find('p').text().trim()).toBe(value)
 
   //})
 

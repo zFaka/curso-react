@@ -14,10 +14,9 @@ const HeroScreen = ({history}) => {
 
   const handleReturn = () => {
     if(history.length <= 2){
-    history.replace('/')}
+      history.replace('/')}
     else{
-    history.goBack()}
-  };
+      history.goBack()}};
 
   const [{
     superhero, 
@@ -27,10 +26,10 @@ const HeroScreen = ({history}) => {
     characters, 
   }] = hero;
 
+
+
   return (
     <div className='row mt-5'>
-
-
       <div className='col-4'>
 
 

@@ -4,7 +4,7 @@ import DcScreen from '../components/dc/DcScreen';
 import HeroScreen from '../components/heroes/HeroScreen';
 import MarvelScreen from '../components/marvel/MarvelScreen';
 import SearchScreen from '../components/search/SearchScreen';
-import {Navbar} from '../components/ui/NavBar';
+import {Navbar} from '../components/ui/Navbar';
 
 const DashboardRouters = () => {
   return (
