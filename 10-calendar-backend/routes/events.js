@@ -1,4 +1,4 @@
-j// Tienen que pasar la validacion del token
+// Tienen que pasar la validacion del token
 const moment = require('moment');
 const {Router} = require('express');
 const {getEvent, createEvent, updateEvent, deleteEvent} = require('../controllers/events');

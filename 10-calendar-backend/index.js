@@ -5,7 +5,7 @@ require('dotenv').config();
 
 
 
-console.log(process.env)
+//console.log(process.env)
 
 
 
@@ -43,5 +43,5 @@ app.use('/api/events', require('./routes/events'))
 //Escuchar peticiones
 app.listen(
     process.env.PORT, () => {
-        console.log(`Server is running in ${4000}`)})
+        console.log(`Server is running in ${process.env.PORT}`)})
 
