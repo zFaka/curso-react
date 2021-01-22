@@ -1,0 +1,2 @@
+db user: user_mern
+db pass: RWST9O0UtY3SExT8
