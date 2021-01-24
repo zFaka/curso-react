@@ -1,4 +1,7 @@
 
+import Swal from "sweetalert2";
+import {fetchWithToken} from "../helpers/fetch";
+import {prepareEvents} from "../helpers/prepareEvents";
 import {types} from "../types/types";
 
 export const eventSetActive = (event) => ({
@@ -6,17 +9,122 @@ export const eventSetActive = (event) => ({
   payload:event
 });
 
-export const eventAddNew = (event) => ({
+export const eventStartAddNew = (event) => {
+
+  return async(dispatch, getState) => {
+
+
+    const {uid, name} = getState().auth;
+
+    try {
+
+
+      const rsp = await fetchWithToken('events', event, 'POST');
+      const body = await rsp.json();
+
+
+      if(body.ok){
+
+        event.id = body.event.id
+        event.user = {
+          _id: uid, 
+          name:name 
+        }
+        //console.log(event)
+        dispatch(eventAddNew(event))
+      }
+    } catch (error) {console.log(error)}
+  }
+}
+
+
+
+export const eventStartLoading = () => {
+
+  return async(dispatch) => {
+    try {
+      const rsp = await fetchWithToken('events');
+      const body = await rsp.json();
+      //const events = body.events; this works
+      const events = prepareEvents(body.events);
+
+      dispatch(eventLoaded(events))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+};
+
+
+
+export const eventStartUpdate = (event) => {
+  return async(dispatch) => {
+    try {
+
+
+      const rsp = await fetchWithToken(`events/${event.id}`, event, 'PUT');
+      const body = await rsp.json();
+
+
+      if(body.ok){
+        dispatch(eventUpdated(event))
+      } else {
+        Swal.fire('Error',body.msg, 'error')
+      }
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+};
+
+
+
+export const eventStartDelete = () => {
+  return async(dispatch, getState) => {
+
+
+    const {id} = getState().cal.activeEvent;
+
+
+    try {
+
+      const rsp = await fetchWithToken(`events/${id}`, {}, 'DELETE');
+      const body = await rsp.json();
+
+
+      if(body.ok){
+        dispatch(eventDeleted())
+      } else {
+        Swal.fire('Error',body.msg, 'error')
+      }
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+};
+
+
+
+export const eventLogout = () => ({type:types.eventLogout})
+
+const eventAddNew = (event) => ({
   type:types.eventAddNew, 
-  payload:event
-});
+  payload:event});
 
 export const eventClearActiveEvent = () => ({
   type:types.eventClearActiveEvent});
 
-export const eventUpdated = (event) => ({
+const eventUpdated = (event) => ({
   type:types.eventUpdated, 
   payload:event});
 
 export const eventDeleted = () => ({
   type:types.eventDeleted});
+
+const eventLoaded = (events) => ({
+  type:types.eventLoaded, 
+  payload:events});
+
+

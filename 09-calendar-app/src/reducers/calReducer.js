@@ -1,19 +1,19 @@
 import {types} from "../types/types";
-import moment from 'moment';
 
+//{
+    //id:new Date().getTime(),
+    //title: 'Birthday',
+    //start: moment().toDate(),
+    //end: moment().add(2, 'hours').toDate(),
+    //notes:'Buy cake', 
+    //user:{
+      //_id:'123', 
+      //name:'Fer'
+    //}
+  //}
 
 const initialState = {
-  events:[{
-    id:new Date().getTime(),
-    title: 'Birthday',
-    start: moment().toDate(),
-    end: moment().add(2, 'hours').toDate(),
-    notes:'Buy cake', 
-    user:{
-      _id:'123', 
-      name:'Fer'
-    }
-  }], 
+  events:[], 
   activeEvent:null
 };
 
@@ -58,6 +58,16 @@ export const calReducer = (state = initialState, action) => {
         events: state.events.filter(
           e => (e.id === state.activeEvent.id)), 
         activeEvent:null
+      }
+
+    case types.eventLoaded:
+      return {...initialState}
+
+    case types.authLogout:
+      return {
+        ...state, 
+        events:[], 
+        activeEvent:{}
       }
 
     default:
